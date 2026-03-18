@@ -1,0 +1,60 @@
+.navbar-brand{
+    font-weight: bold;
+    font-size: 24px;
+    color: #f9f9fa !important;
+}
+.navbar{
+    background-color: #0f1923 !important;
+}
+.search{
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    align-items: center;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 20px;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .search {
+        margin: 0;
+        max-width: none;
+    }
+    .search input {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+    .navbar .container-fluid {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        display: none; /* Hide brand name on very small screens to fit search */
+    }
+}
+
+.cart{
+    text-decoration: none;
+}
+.btn{
+    color: white !important;
+    border: solid white 1px;
+}
+.btn:hover{
+    color: rgb(5, 4, 4);
+    background-color: white;
+}

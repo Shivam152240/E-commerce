@@ -1,0 +1,31 @@
+{
+  "srv": [
+    {
+      "name": "ac-zo7onwv-shard-00-01.hhldeas.mongodb.net",
+      "port": 27017,
+      "priority": 0,
+      "weight": 0,
+      "type": "SRV"
+    },
+    {
+      "name": "ac-zo7onwv-shard-00-02.hhldeas.mongodb.net",
+      "port": 27017,
+      "priority": 0,
+      "weight": 0,
+      "type": "SRV"
+    },
+    {
+      "name": "ac-zo7onwv-shard-00-00.hhldeas.mongodb.net",
+      "port": 27017,
+      "priority": 0,
+      "weight": 0,
+      "type": "SRV"
+    }
+  ],
+  "txt": [
+    [
+      "authSource=admin&replicaSet=atlas-106bfh-shard-0"
+    ]
+  ],
+  "error": null
+}

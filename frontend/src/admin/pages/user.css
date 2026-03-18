@@ -1,0 +1,54 @@
+/* user.css */
+
+.user-table {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #464e55 !important;
+}
+
+.user-table thead th {
+    background-color: #2c3e50 !important;
+    color: rgb(249, 247, 247) !important;
+    border: none;
+    padding: 15px;
+}
+
+.user-table tbody tr {
+    transition: 0.3s;
+    background-color: #464e55 !important;
+}
+
+.user-table tbody tr td {
+    color: rgb(4, 3, 3) !important;
+    border-color: #566472 !important;
+    padding: 12px 15px;
+}
+
+.user-table tbody tr:hover {
+    background-color: #566472 !important;
+}
+
+.user-table .badge {
+
+    padding: 8px 12px;
+    font-weight: 500;
+}
+.bg-info{
+    background-color: #6b7784 !important;
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .user-table thead th, .user-table tbody tr td {
+        padding: 10px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    .user-table .badge {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+    .card-body {
+        padding: 10px;
+    }
+}

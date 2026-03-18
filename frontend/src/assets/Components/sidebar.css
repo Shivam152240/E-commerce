@@ -1,0 +1,101 @@
+.heading {
+    margin-left: 1rem;
+}
+
+.sidebar .p {
+    margin-left: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.sidebar .btn {
+    color: black;
+}
+
+.sidebar .btn:hover {
+    color: black !important;
+}
+.user{
+    margin-left: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.user:hover{
+    color: black !important;
+}
+.btn2{
+    background-color:#2c3e50;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn2:hover{
+    background-color:#e9ebed;
+    color: black;
+}
+.btn1{
+    background-color:#bfc5ca;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn1:hover{
+    background-color:#e9ebed;
+    color: black;
+}
+
+@media (max-width: 991px) {
+    .offcanvas {
+        width: 280px !important;
+        border-right: none;
+    }
+    .offcanvas-header {
+        padding: 15px 20px;
+        background: #f8f9fa;
+        border-bottom: 1px solid #eee;
+    }
+    .offcanvas-header h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        color: #212121;
+        display: flex;
+        align-items: center;
+    }
+    .offcanvas-header .btn-close {
+        font-size: 12px;
+    }
+    .offcanvas-body {
+        padding: 0;
+    }
+    .heading {
+        margin: 20px 0 10px 20px;
+        font-size: 14px;
+        color: #666;
+    }
+    .sidebar .p, .user {
+        margin: 0;
+        padding: 12px 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: background 0.2s;
+    }
+    .sidebar .p:hover, .user:hover {
+        background: #f1f3f6;
+    }
+    hr {
+        margin: 10px 0;
+        opacity: 0.1;
+    }
+}

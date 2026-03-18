@@ -1,0 +1,42 @@
+/* ===== LAYOUT ===== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-layout {
+  display: flex;
+  flex: 1; /* Take remaining vertical space */
+}
+
+/* Sidebar fixed width */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+/* Main content takes remaining space */
+.main-content {
+  flex: 1;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 991px) {
+  .app-layout .sidebar {
+    display: none; /* Hide fixed sidebar on mobile, use hamburger menu */
+  }
+  
+  .main-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+    .app-container {
+        padding-bottom: 60px; /* Space for bottom nav */
+    }
+}
