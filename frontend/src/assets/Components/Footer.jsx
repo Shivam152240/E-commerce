@@ -21,9 +21,9 @@ const Footer = () => {
 
                     <div>
                         <h6>Connect with Us</h6>
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=100044477266809">Facebook</a>
+                        <a href="https://x.com/ShivamKuma4374">Twitter</a>
+                        <a href="https://www.instagram.com/_shivam_prajapati____/">Instagram</a>
                     </div>
 
                     <div>
