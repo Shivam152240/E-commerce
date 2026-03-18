@@ -3,6 +3,8 @@
   min-height: 100vh;
   font-family: 'Poppins', Roboto, Arial, sans-serif;
   color: #0f1923;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .home-content {
@@ -572,6 +574,32 @@
   .timer {
       font-size: 14px;
       padding: 4px 12px;
+  }
+
+  .offer-revealed h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+  }
+
+  .service-highlights {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+
+  .service-item {
+      padding: 20px 10px;
+  }
+
+  .service-item h3 {
+      font-size: 14px;
+  }
+
+  .newsletter-content h2 {
+      font-size: 26px;
+  }
+
+  .newsletter-section {
+      padding: 40px 20px;
   }
 
   .newsletter-form {
