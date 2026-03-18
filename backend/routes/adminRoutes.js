@@ -77,7 +77,7 @@ router.put("/products/:id", upload.single("image"), async (req, res) => {
     };
 
     if (req.file) {
-      updateData.image = `http://localhost:5000/uploads/${req.file.filename}`;
+      updateData.image = `/uploads/${req.file.filename}`;
     }
 
     const product = await Product.findByIdAndUpdate(

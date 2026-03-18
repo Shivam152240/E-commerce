@@ -32,7 +32,7 @@ router.post('/', upload.single('image'), async (req, res) => {
     let imageUrl = req.body.image; // Fallback for case where no new file is uploaded but URL is provided
 
     if (req.file) {
-      imageUrl = `http://localhost:5000/uploads/banners/${req.file.filename}`;
+      imageUrl = `/uploads/banners/${req.file.filename}`;
     }
 
     // Find and update if exists, otherwise create

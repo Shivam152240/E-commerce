@@ -10,7 +10,7 @@ exports.addProduct = async (req, res) => {
     let imageUrl = "";
 
     if (req.file) {
-      imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
+      imageUrl = `/uploads/${req.file.filename}`;
     }
 
     const product = await Product.create({
