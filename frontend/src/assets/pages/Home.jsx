@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import "./home.css";
+import "./deals.css";
 import { Link } from "react-router-dom";
 import HeroSlider from "../Components/HeroSlider";
 
@@ -174,21 +175,22 @@ const Home = ({ search = "", category = "", setCategory }) => {
             <Link to="/deals" className="view-all-btn">View All Deals</Link>
           </div>
 
-          <div className="deals-grid">
+          <div className="deals-grid-container">
             {filteredProducts.length > 0 ? (
                 filteredProducts.slice(0, 12).map((product) => (
-                    <Link to={`/product/${product._id}`} key={product._id} className="deal-card">
-                        <div className="deal-img">
+                    <Link to={`/product/${product._id}`} key={product._id} className="deal-item-card">
+                      <div className="deal-image">
                         <img src={product.image || product.thumbnail} alt={product.title} />
+                      </div>
+                      <div className="deal-details">
+                        <h3 className="deal-name">{product.title}</h3>
+                        <div className="deal-pricing">
+                          <span className="current-price">₹{product.price}</span>
+                          <span className="old-price">₹{Math.round(product.price * 1.5)}</span>
+                          <span className="discount-badge">30% OFF</span>
                         </div>
-                        <div className="deal-info">
-                          <h4 className="deal-title">{product.title}</h4>
-                          <div className="price-container">
-                            <span className="mrp">₹{Math.round(product.price * 1.5)}</span>
-                            <span className="current-price">₹{product.price}</span>
-                          </div>
-                          <p className="buy-offer">Buy at ₹{Math.round(product.price * 0.9)}</p>
-                        </div>
+                        <p className="deal-tag">Limited Time Offer</p>
+                      </div>
                     </Link>
                 ))
             ) : (
