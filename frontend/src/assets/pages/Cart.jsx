@@ -89,31 +89,48 @@ const Cart = () => {
         <div className="cart-items-list">
           {cart.map((item) => (
             <div className="cart-item-card-new" key={item._id}>
-              <div className="item-image-section">
-                <img src={item.productId?.image || item.productId?.thumbnail} alt={item.productId?.title} />
-                <div className="quantity-controls-new">
-                  <button onClick={() => updateQuantity(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
-                  <input type="text" value={item.quantity} readOnly />
-                  <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
+              <div className="cart-item-top">
+                <div className="item-image-section">
+                  <img src={item.productId?.image || item.productId?.thumbnail} alt={item.productId?.title} />
+                  <div className="quantity-controls-new">
+                    <button onClick={() => updateQuantity(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                    <input type="text" value={item.quantity} readOnly />
+                    <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
+                  </div>
+                </div>
+                
+                <div className="item-details-section">
+                  <Link to={`/product/${item.productId?._id}`} className="item-title">{item.productId?.title}</Link>
+                  <p className="item-seller">Size: M, Size: Regular</p>
+                  
+                  <div className="item-rating">
+                    <span className="badge bg-success" style={{fontSize: '12px'}}>4.0 ★</span> <span className="text-muted" style={{fontSize: '13px'}}>(2,943)</span> <img hspace="4" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" width="50" alt="assured" />
+                  </div>
+
+                  <div className="item-price-row">
+                    <span className="discount-tag">↓77%</span>
+                    <span className="old-price">₹{item.productId ? Math.round(item.productId.price * 1.77) : 0}</span>
+                    <span className="current-price">₹{item.productId?.price}</span>
+                  </div>
+                  
+                  <div className="delivery-info-new">
+                    <p>Delivery by Mar 25, Wed</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="item-details-section">
-                <Link to={`/product/${item.productId?._id}`} className="item-title">{item.productId?.title}</Link>
-                <p className="item-seller">Seller: QuickCart Official</p>
-                <div className="item-price-row">
-                  <span className="current-price">₹{item.productId?.price}</span>
-                  <span className="old-price">₹{Math.round(item.productId?.price * 1.4)}</span>
-                  <span className="discount-tag">28% Off</span>
-                </div>
-                <div className="item-actions-new">
-                  <button className="save-later">SAVE FOR LATER</button>
-                  <button className="remove-item" onClick={() => removeFromCart(item._id)}>REMOVE</button>
-                </div>
-              </div>
-              
-              <div className="delivery-info-new">
-                <p>Delivery in 2 - 3 days | <span className="free">Free</span></p>
+
+              <div className="item-actions-footer">
+                <button className="save-later">
+                  <i className="fa-regular fa-square-plus" style={{marginRight: '6px'}}></i> Save for later
+                </button>
+                <div className="action-divider"></div>
+                <button className="remove-item" onClick={() => removeFromCart(item._id)}>
+                  <i className="fa-regular fa-trash-can" style={{marginRight: '6px'}}></i> Remove
+                </button>
+                <div className="action-divider"></div>
+                <button className="buy-now">
+                  <i className="fa-solid fa-bolt" style={{marginRight: '6px'}}></i> Buy this now
+                </button>
               </div>
             </div>
           ))}
