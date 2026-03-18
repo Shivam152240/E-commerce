@@ -128,7 +128,14 @@ const Cart = () => {
                   <i className="fa-regular fa-trash-can" style={{marginRight: '6px'}}></i> Remove
                 </button>
                 <div className="action-divider"></div>
-                <button className="buy-now">
+                <button className="buy-now"  onClick={() => navigate("/checkout", {
+                state: {
+                  selectedItem: {
+                    productId: product,
+                    quantity: 1
+                  }
+                }
+              })}>
                   <i className="fa-solid fa-bolt" style={{marginRight: '6px'}}></i> Buy this now
                 </button>
               </div>
