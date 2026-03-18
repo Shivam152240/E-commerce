@@ -128,10 +128,10 @@ const Cart = () => {
                   <i className="fa-regular fa-trash-can" style={{marginRight: '6px'}}></i> Remove
                 </button>
                 <div className="action-divider"></div>
-                <button className="buy-now"  onClick={() => navigate("/checkout", {
+                <button className="buy-now" onClick={() => navigate("/checkout", {
                 state: {
                   selectedItem: {
-                    productId: product,
+                    productId: item.productId,
                     quantity: 1
                   }
                 }
