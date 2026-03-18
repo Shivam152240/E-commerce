@@ -123,7 +123,7 @@ const Home = ({ search = "", category = "", setCategory }) => {
                 {category && (
                     <button 
                         onClick={() => setCategory("")}
-                        style={{ background: '#2874f0', color: 'white', border: 'none', padding: '5px 15px', borderRadius: '4px', cursor: 'pointer', fontSize: '14px', fontWeight: '600' }}
+                        style={{ background: '#2c3e50', color: 'white', border: 'none', padding: '5px 15px', borderRadius: '4px', cursor: 'pointer', fontSize: '14px', fontWeight: '600' }}
                     >
                         Show All Products
                     </button>
