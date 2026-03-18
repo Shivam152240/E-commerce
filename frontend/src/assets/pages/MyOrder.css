@@ -23,6 +23,7 @@ gap:20px;
 border-bottom:1px solid #eee;
 padding-bottom:20px;
 margin-bottom:20px;
+position: relative;
 }
 
 .product-image img{
@@ -63,29 +64,19 @@ color:green;
 color:red;
 }
 
-.order-buttons{
-margin-top:10px;
-display:flex;
-gap:10px;
+.mobile-order-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+}
+.mobile-order-actions button {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-.view-btn{
-background:#2c3e50;
-border:none;
-color:white;
-padding:6px 12px;
-border-radius:4px;
-cursor:pointer;
-}
 
-.cancel-btn{
-background:red !important;
-border:none;
-color:white !important;
-padding:6px 12px;
-border-radius:4px;
-cursor:pointer;
-}
 
 .review-section{
 margin-top:15px;
@@ -149,24 +140,7 @@ display:flex;
 justify-content:space-between;
 margin-top:15px;
 }
-.reorder-btn{
-background:#566472
-;
-border:none;
-color:white;
-padding:6px 12px;
-border-radius:4px;
-cursor:pointer;
-}
 
-.return-btn{
-background:#808b96;
-border:none;
-color:#2c3e50;
-padding:6px 12px;
-border-radius:4px;
-cursor:pointer;
-}
 
 .invoice-btn{
 background:#6c757d;
@@ -239,20 +213,7 @@ color:#666;
       font-size: 13px;
       margin-bottom: 5px;
   }
-  .mobile-order-actions {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 5;
-  }
-  .mobile-order-actions button {
-      background: none !important;
-      border: none !important;
-      box-shadow: none !important;
-  }
-  .order-buttons {
-      display: none; 
-  }
+
 
   .order-footer {
       flex-direction: column;

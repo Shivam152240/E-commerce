@@ -188,8 +188,8 @@ Date : ${new Date(order.createdAt).toLocaleDateString()}
                     {order.orderStatus}
                   </p>
 
-                  {/* Mobile 3-dot Actions Menu */}
-                  <div className="mobile-order-actions dropdown d-md-none">
+                  {/* 3-dot Actions Menu */}
+                  <div className="mobile-order-actions dropdown">
                     <button className="btn btn-link p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i className="fa-solid fa-ellipsis-vertical fs-5 text-muted"></i>
                     </button>
@@ -222,43 +222,6 @@ Date : ${new Date(order.createdAt).toLocaleDateString()}
                         </button>
                       </li>
                     </ul>
-                  </div>
-
-
-                  {/* Desktop Buttons */}
-                  <div className="order-buttons d-none d-md-flex">
-                    <button
-                      className="view-btn"
-                      onClick={() =>
-                        navigate(`/product/${item.productId?._id}`)
-                      }
-                    >
-                      View Product
-                    </button>
-
-                    <button
-                      className="reorder-btn"
-                      onClick={() =>
-                        reorderProduct(item.productId?._id)
-                      }
-                    >
-                      Reorder
-                    </button>
-
-                    {order.orderStatus === "Pending" && (
-                      <button
-                        className="cancel-btn"
-                        onClick={() => cancelOrder(order._id)}
-                      >
-                        Cancel Order
-                      </button>
-                    )}
-
-                    {order.orderStatus === "Delivered" && (
-                      <button className="return-btn">
-                        Return Product
-                      </button>
-                    )}
                   </div>
 
 
@@ -351,14 +314,6 @@ Date : ${new Date(order.createdAt).toLocaleDateString()}
               <p>Order ID : {order._id}</p>
 
               <h4>Total : ₹ {order.totalAmount}</h4>
-
-              <button
-                className="invoice-btn d-none d-md-block"
-                onClick={() => downloadInvoice(order)}
-              >
-                Download Invoice
-              </button>
-
 
             </div>
 
