@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 const Address = require("../models/address");
 
 // GET ALL USERS (Admin)

@@ -1,4 +1,4 @@
-const Product = require("../models/Product");
+const Product = require("../models/product");
 const Cart = require("../models/cart"); // import karna mat bhoolna
 const Review = require("../models/review");
 
