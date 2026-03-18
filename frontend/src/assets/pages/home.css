@@ -543,7 +543,7 @@
   }
 
   .deals-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
@@ -589,15 +589,36 @@
 
 @media (max-width: 480px) {
     .home-content {
-        padding: 10px;
+        padding: 8px;
+    }
+    .deals-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+    .deal-card {
+        padding: 8px;
+    }
+    .deal-img {
+        height: 120px;
     }
     .deals-title h2 {
-        font-size: 18px;
+        font-size: 16px;
+    }
+    .timer {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    .price-container {
+        flex-wrap: wrap;
+        gap: 4px;
     }
     .current-price {
         font-size: 14px !important;
     }
     .mrp {
         font-size: 12px !important;
+    }
+    .buy-offer {
+        font-size: 12px;
     }
 }
