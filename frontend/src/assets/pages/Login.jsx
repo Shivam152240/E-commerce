@@ -3,7 +3,8 @@ import './login.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-const API = 'http://localhost:5000/api/auth';
+const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5000' : '';
+const API = `${API_URL}/api/auth`;
 
 export default function Login() {
 

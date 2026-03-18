@@ -1,7 +1,8 @@
 import axios from "axios";
 
+const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5000' : '';
 const adminApi = axios.create({
-  baseURL: "http://localhost:5000/api/admin",
+  baseURL: `${API_URL}/api/admin`,
 });
 
 adminApi.interceptors.request.use((req) => {

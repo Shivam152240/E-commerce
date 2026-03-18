@@ -54,7 +54,8 @@ const AddProduct = () => {
 
     try {
 
-      await axios.post("http://localhost:5000/api/products", data, {
+      const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5000' : '';
+      await axios.post(`${API_URL}/api/products`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

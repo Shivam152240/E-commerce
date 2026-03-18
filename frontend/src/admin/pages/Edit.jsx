@@ -23,7 +23,8 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5000' : '';
+        const res = await axios.get(`${API_URL}/api/products/${id}`);
 
         setFormData({
           title: res.data.title,

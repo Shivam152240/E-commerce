@@ -23,7 +23,8 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+            const API_URL = import.meta.env.MODE === 'development' ? 'http://localhost:5000' : '';
+            const res = await axios.post(`${API_URL}/api/auth/register`, formData);
             
             alert('Registration successful! Please log in.');
             navigate('/login');
