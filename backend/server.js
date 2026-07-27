@@ -32,7 +32,7 @@ app.use("/api/orders", require("./routes/orderRoute"));
 app.use("/api/categories", require("./routes/categoryRoute"));
 app.use("/api/admin", adminRoutes);
 
-
+app.use("/api/payment", require("./routes/paymentRoutes"));
 
 /* ================= PRODUCTION SETUP ================= */
 const frontendPath = path.join(__dirname, '../frontend/dist');

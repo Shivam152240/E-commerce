@@ -7,6 +7,7 @@ import HeroSlider from "../Components/HeroSlider";
 
 const Home = ({ search = "", category = "", setCategory }) => {
   const [products, setProducts] = useState([]);
+ 
   const [banners, setBanners] = useState([]);
   const [loading, setLoading] = useState(true);
   const [timeLeft, setTimeLeft] = useState({ hours: 20, minutes: 45, seconds: 12 });
@@ -75,6 +76,7 @@ const Home = ({ search = "", category = "", setCategory }) => {
   const promo1 = getBanner('promo-grid', 1);
   const promo2 = getBanner('promo-grid', 2);
   const promo3 = getBanner('promo-grid', 3);
+  console.log(promo3);
 
   return (
     <div className="home-page-new">
@@ -99,7 +101,7 @@ const Home = ({ search = "", category = "", setCategory }) => {
                 <h3>Recently Viewed</h3>
               </div>
               <div className="side-content">
-                <img src="/assets/images/hero_banner_new.png" alt="Recent" />
+                <img src={`http://localhost:5000${"/assets/images/hero_banner_new.png"}`} alt="Recent" />
                 <p>Track your style history</p>
               </div>
             </div>
@@ -158,7 +160,7 @@ const Home = ({ search = "", category = "", setCategory }) => {
               <p>FLASH SELL <br /> ENDING SOON</p>
               <span className="promo-subtitle">Don't miss out!</span>
             </div>
-            <img src={promo3 ? promo3.image : "/assets/images/watch_promo.png"} alt="Promo 3" />
+            <img src={promo3 ? `http://localhost:5000${promo3.image}` : "/assets/images/watch_promo.png"} alt="Promo 3" />
           </div>
         </div>
 
@@ -180,7 +182,7 @@ const Home = ({ search = "", category = "", setCategory }) => {
                 filteredProducts.slice(0, 12).map((product) => (
                     <Link to={`/product/${product._id}`} key={product._id} className="deal-item-card">
                       <div className="deal-image">
-                        <img src={product.image || product.thumbnail} alt={product.title} />
+                        <img src={`http://localhost:5000${product.image || product.thumbnail}`} alt={product.title} />
                       </div>
                       <div className="deal-details">
                         <h3 className="deal-name">{product.title}</h3>

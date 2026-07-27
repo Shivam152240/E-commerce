@@ -3,6 +3,7 @@ import "./cart.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import api from "../services/api";
+import { getImageUrl } from "../utils/image";
 
 const Cart = () => {
   const { cart, setCart } = useCart();
@@ -91,7 +92,7 @@ const Cart = () => {
             <div className="cart-item-card-new" key={item._id}>
               <div className="cart-item-top">
                 <div className="item-image-section">
-                  <img src={item.productId?.image || item.productId?.thumbnail} alt={item.productId?.title} />
+                  <img src={getImageUrl(item.productId?.image || item.productId?.thumbnail)} alt={item.productId?.title} />
                   <div className="quantity-controls-new">
                     <button onClick={() => updateQuantity(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
                     <input type="text" value={item.quantity} readOnly />

@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import api from "../services/api";
 import "./checkout.css";
+import { getImageUrl } from "../utils/image";
 
 const Checkout = () => {
   const { cart, setCart } = useCart();
@@ -11,6 +12,7 @@ const Checkout = () => {
   const token = localStorage.getItem("token");
 
   const selectedItem = location.state?.selectedItem;
+  
 
   // Decide products to show
   const products = selectedItem ? [selectedItem] : cart;
@@ -143,7 +145,7 @@ const Checkout = () => {
             {products.map((item, index) => (
               <div className="checkout-product-card" key={`${item._id}-${index}`}>
                 <div className="product-img">
-                  <img src={item.productId.image || "https://via.placeholder.com/100"} alt={item.productId.title} />
+                  <img src={getImageUrl(item.productId.image) || "https://via.placeholder.com/100"} alt={item.productId.title} />
                   <div className="qty-selector">
                     <span>Qty: {item.quantity}</span>
                   </div>

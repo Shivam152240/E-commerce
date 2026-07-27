@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { useCart } from "../context/CartContext";
 import "./productDetails.css";
+import { getImageUrl } from "../utils/image";
 
 const ProductDetails = () => {
 
@@ -26,7 +27,7 @@ const res = await api.get(`/products/${id}`);
 setProduct(res.data);
 
 setSelectedImage(
-res.data.image || res.data.thumbnail
+  getImageUrl(res.data.image || res.data.thumbnail)
 );
 
 const related = await api.get("/products");
@@ -61,8 +62,8 @@ return <h3 className="text-center mt-5">Product not found</h3>
 const discountPrice = Math.round(product.price * 0.8);
 
 const thumbnails = [
-product.image,
-product.thumbnail
+  product.image ? getImageUrl(product.image) : null,
+  product.thumbnail ? getImageUrl(product.thumbnail) : null
 ].filter(Boolean);
 
 

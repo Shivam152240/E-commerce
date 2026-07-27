@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useOrder } from "../context/OrderContext";
 import "./MyOrder.css";
 import api from "../services/api";
+import { getImageUrl } from "../utils/image";
 
 const MyOrders = () => {
 
@@ -175,7 +176,7 @@ Date : ${new Date(order.createdAt).toLocaleDateString()}
               <div key={index} className="product-row">
 
                 <div className="product-image">
-                  <img src={item.productId?.image} alt="" />
+                  <img src={getImageUrl(item.productId?.image)} alt="" />
                 </div>
 
                 <div className="product-details">

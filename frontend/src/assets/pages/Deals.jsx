@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from "../services/api";
 import "./deals.css";
 import { Link } from "react-router-dom";
+import { getImageUrl } from "../utils/image";
 
 const Deals = () => {
   const [products, setProducts] = useState([]);
@@ -144,7 +145,7 @@ const Deals = () => {
               filteredProducts.map(product => (
                 <Link to={`/product/${product._id}`} key={product._id} className="deal-item-card">
                   <div className="deal-image">
-                    <img src={product.image || product.thumbnail} alt={product.title} />
+                    <img src={getImageUrl(product.image || product.thumbnail)} alt={product.title} />
                   </div>
                   <div className="deal-details">
                     <h3 className="deal-name">{product.title}</h3>
